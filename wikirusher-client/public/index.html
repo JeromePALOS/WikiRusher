@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Wiki Rusher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="/asset/image/icon-wikirusher.png" />
+    
+    
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/asset/css/template.css">
+    <link type="text/css" rel="stylesheet" href="/asset/icon/icomoon/style.css">
+  </head>
+  <body>
+    
+    
+    <script>
+      var username = "user" + Math.floor(Math.random() * Math.floor(999999));	
+      if(
+        sessionStorage.getItem("username") == "null" || 
+        sessionStorage.getItem("username") == null || 
+        sessionStorage.getItem("username") == "undefined" || 
+        sessionStorage.getItem("username") == undefined ||
+        sessionStorage.getItem("username") == 0 ||
+        sessionStorage.getItem("username") == "0"
+      
+      ){
+        username = window.prompt('Username?', username);
+        sessionStorage.setItem("username", username);
+      }
+
+    </script>
+    <script src="//code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <script src="//unpkg.com/bootstrap@4.5.3/dist/js/bootstrap.min.js"> </script>
+  </body>
+</html>

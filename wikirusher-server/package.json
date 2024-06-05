@@ -1,0 +1,27 @@
+{
+  "name": "wikirusher-server",
+  "version": "0.3.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wiki",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bufferutil": "^4.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "node-fetch": "^2.6.1",
+    "sequelize": "^6.3.5",
+    "socket.io": "^3.0.3",
+    "utf-8-validate": "^5.0.3",
+    "ws": "^7.4.0"
+  }
+}

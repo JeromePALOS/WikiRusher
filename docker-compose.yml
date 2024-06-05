@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=wikirusher774400
+      - MYSQL_DATABASE=dbwikirusher
+    ports:
+      - 3310:3306
+    volumes:
+      - /docker/wikirusher/db:/var/lib/mysql
+    networks:
+      - backend
+  front:
+    build: 
+      context: ./wikirusher-client
+    restart: unless-stopped
+    ports:
+      - 8081:8081
+    networks:
+      - backend
+  back:
+    depends_on:
+      - mysqldb
+    build: ./wikirusher-server
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=root
+      - DB_PASS=wikirusher774400
+      - DB_NAME=dbwikirusher
+      - DB_PORT=3310
+      - FRONT_BASE_URL=http://localhost:8081
+    stdin_open: true
+    tty: true  
+    networks:
+      - backend
+volumes: 
+  db:
+networks:
+  backend:
+    driver: bridge
+  
