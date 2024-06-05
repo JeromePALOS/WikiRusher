@@ -46,6 +46,7 @@ Change wikirusher-client/.env
 
 
 ```bash
+cd wikirusher
 docker-compose rm -f && docker-compose up --build
 ```
 
