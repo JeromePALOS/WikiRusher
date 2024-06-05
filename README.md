@@ -1,4 +1,4 @@
-#Wiki Rusher
+# Wiki Rusher
 
 Game with api wikipedia
 
