@@ -5,7 +5,8 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: process.env.FRONT_BASE_URL || "http://wikirusher.com"
+  origin: [process.env.FRONT_BASE_URL, "http://localhost:42002"],
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
